@@ -16,7 +16,7 @@ jobs:
         with:
           key: cache-0128259
       - name: prime-cache-0128259
-        uses: echo "Cache hit status - ${{steps.cache_trial.output.cache-hit}}"
+        run: echo "Cache hit status - ${{steps.cache_trial.outputs.cache-hit}}"
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
