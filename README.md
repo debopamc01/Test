@@ -1,1 +1,1 @@
-This is the entry point
+This is the entry point to the test project
