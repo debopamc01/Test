@@ -10,12 +10,13 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v5
-      - name: Implement_Cache
+      - name: Implement Cache
+        id: cache_trial
         uses: actions/cache@v4
         with:
           key: cache-0128259
       - name: prime-cache-0128259
-        uses: echo "Cache hit status - ${{Implement_Cache.output.cache-hit}}"
+        uses: echo "Cache hit status - ${{steps.cache_trial.output.cache-hit}}"
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
