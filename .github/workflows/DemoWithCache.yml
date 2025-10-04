@@ -16,6 +16,11 @@ jobs:
         with:
           key: cache-0128259
           path: ~/.cache
+      # 👇 ensures ~/.cache exists so caching actually saves something
+      - name: Ensure ~/.cache exists
+        run: |
+          mkdir -p ~/.cache
+          echo "primed on $(date)" > ~/.cache/seed.txt
       - name: prime-cache-0128259
         run: echo "Cache hit status - ${{steps.cache_trial.outputs.cache-hit}}"
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
